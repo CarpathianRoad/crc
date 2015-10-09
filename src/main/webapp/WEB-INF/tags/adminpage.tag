@@ -70,17 +70,17 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                            <li id="energy">
-                                <a href="${Constants.URL}system/projects/energy"><i class="menu-icons"><img src="${Constants.URL}images/icon-energy.png" /></i> <span>Energy</span></a>
+                            <li num="1" id="energy">
+                                <a href="${Constants.URL}system/index/1"><i class="menu-icons"><img src="${Constants.URL}images/icon-energy.png" /></i> <span>Energy</span></a>
                             </li>
-                            <li id="ecology">
-                                <a href="${Constants.URL}system/projects/ecology"><i class="menu-icons"><img src="${Constants.URL}images/icon-ecology.png" /></i> Ecology</a>
+                            <li num="2" id="ecology">
+                                <a href="${Constants.URL}system/index/2"><i class="menu-icons"><img src="${Constants.URL}images/icon-ecology.png" /></i> Ecology</a>
                             </li>
-                            <li id="tourism">
-                                <a href="${Constants.URL}system/projects/tourism"><i class="menu-icons"><img src="${Constants.URL}images/icon-tourism.png" /></i> Tourism</a>
+                            <li num="3" id="tourism">
+                                <a href="${Constants.URL}system/index/3"><i class="menu-icons"><img src="${Constants.URL}images/icon-tourism.png" /></i> Tourism</a>
                             </li>
-                            <li id="soc-projects">
-                                <a href="${Constants.URL}system/projects/soc-projects"><i class="menu-icons"><img src="${Constants.URL}images/icon-soc-projects.png" /></i> Soc-projects</a>
+                            <li num="4" id="soc-projects">
+                                <a href="${Constants.URL}system/index/4"><i class="menu-icons"><img src="${Constants.URL}images/icon-soc-projects.png" /></i> Soc-projects</a>
                             </li>
                             <li id="logout">
                                 <a href="<c:url value="/system/do/logout"/>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -110,16 +110,17 @@
     <script>
         $(document).ready(function () {
             if('${Constants.URL}' === '/') {
-                var url = window.location.href.split('/')[4];
-            }
-            else {
                 var url = window.location.href.split('/')[5];
             }
+            else {
+                var url = window.location.href.split('/')[6];
+            }
+            console.log(url);
             if(url === 'panel' || url === 'index' || url === 'main' || url === 'articles') {
-                $("#index").addClass('active');
+                $("li[num='1']").addClass('active');
             }
             else {
-                $("#"+url).addClass('active');
+                $("li[num='"+url+"']").addClass('active');
             }
         });
     </script>

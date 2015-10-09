@@ -27,7 +27,7 @@ and open the template in the editor.
     border-color: #576A90;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-      background-color: #14A86B;
+      background-color: rgba(220, 220, 220, 0.26);
 }
 .side-nav a {
     font-size: 20px;
