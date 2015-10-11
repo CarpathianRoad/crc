@@ -60,7 +60,7 @@ public class SystemController {
     }
     
     @RequestMapping(value = {"/system/add/{id}", "/system/add/{id}/"}, method = RequestMethod.GET)
-	public ModelAndView projectAdd(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView projectAdd(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
     	ModelAndView model = new ModelAndView("/system/add");
     	String folder = "files";
     	model.addObject("folder", folder);
@@ -71,7 +71,7 @@ public class SystemController {
     }
         
     @RequestMapping(value = {"/system/edit/{id}", "/system/edit/{id}/"}, method = RequestMethod.GET)
-	public ModelAndView projectEdit(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView projectEdit(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
     	ModelAndView model= new ModelAndView("/system/edit");
     	ProjectModel temp = Projects.getProjectByID(id);
         String folder = "files";
@@ -84,7 +84,7 @@ public class SystemController {
     }
     
     @RequestMapping(value = {"/system/delete/{id}", "/system/delete/{id}/"}, method = RequestMethod.GET)
-	public ModelAndView projectDelete(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView projectDelete(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
     	ModelAndView model = new ModelAndView("/system/delete");
         ProjectModel temp = Projects.getProjectByID(id);
     	model.addObject("project", temp);
@@ -97,50 +97,7 @@ public class SystemController {
         ModelAndView model = new ModelAndView("/system/login");
         return model;
     }
-    
-    @RequestMapping(value = {"/tools/imageupload/{folder}/","/tools/imageupload/{folder}"}, method = RequestMethod.GET)
-    	public ModelAndView fileManager (@PathVariable("folder") String folder,HttpServletRequest request,
-   	 HttpServletResponse response) throws Exception {
-            	String path = request.getParameter("path");
-            	String type = request.getParameter("type");
-            	String ckeditor = request.getParameter("CKEditor");
-            	String num = request.getParameter("CKEditorFuncNum");
-   	 ModelAndView model = new ModelAndView("/tools/FileDrag");
-            	model.addObject("ckeditor", ckeditor);
-            	model.addObject("num", num);
-            	model.addObject("type", type);
-            	
-           	 
-            	model.addObject("folder", folder.replace('|', '/'));
-            	
-            	if("".equals(path)) {
-                	model.addObject("path",path.replace(",", "/"));
-            	}
-   	 return model;
-	}
-    @RequestMapping(value = {"/system/do/uploadimage", "/system/do/uploadimage/"}, method = RequestMethod.POST)
-	public @ResponseBody
-	String uploadImageHandler(@RequestParam("file") MultipartFile file, @RequestParam("path") String path,  HttpServletRequest request) {
-    	String name = file.getOriginalFilename();
-        name = TransliteratorClass.transliterate(name);
-    	if (!file.isEmpty()) {
-        	try {
-            	byte[] bytes = file.getBytes();
-            	File dir = new File(Constants.home+path);
-            	if (!dir.exists())
-                	dir.mkdirs();
-            	File serverFile = new File(dir.getAbsolutePath() + File.separator + name);
-            	try (BufferedOutputStream stream = new BufferedOutputStream( new FileOutputStream(serverFile))) {
-                	stream.write(bytes);
-            	}
-            	return "";
-        	} catch (Exception e) {
-            	return "You failed to upload " + name + " => " + e.getMessage();
-        	}
-    	} else {
-        	return "You failed to upload " + name + " because the file was empty.";
-    	}
-	}
+        
     /** Ajax controllers
      * @param request
      * @param response
@@ -174,35 +131,108 @@ public class SystemController {
     } 
     
     @RequestMapping(value = "/system/do/insertdata", method = RequestMethod.POST)
-	public ModelAndView addArticle(HttpServletRequest request) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedEncodingException, IOException {
+    public ModelAndView addArticle(HttpServletRequest request) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedEncodingException, IOException {
     	request.setCharacterEncoding("UTF-8");
     	String titleEN = request.getParameter("titleEN");
     	String titleUA = request.getParameter("titleUA");
     	String textEN = request.getParameter("textEN");
     	String textUA = request.getParameter("textUA");
+    	String avatar = request.getParameter("avatar_path");
     	String category = request.getParameter("category");
-    	
-    	Projects.insertProject(titleEN, titleUA, textEN, textUA, category);
+    	Projects.insertProject(titleEN, titleUA, textEN, textUA, avatar, category);
     	return new ModelAndView("redirect:" + "/system/index/"+category);
     }
         
     @RequestMapping(value = "/system/do/editdata", method = RequestMethod.POST)
-	public ModelAndView editArticle(HttpServletRequest request) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedEncodingException, IOException {
+    public ModelAndView editArticle(HttpServletRequest request) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedEncodingException, IOException {
     	request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("project_id");
     	String titleEN = request.getParameter("titleEN");
     	String titleUA = request.getParameter("titleUA");
     	String textEN = request.getParameter("textEN");
     	String textUA = request.getParameter("textUA");
+    	String avatar = request.getParameter("avatar_path");
     	String category = request.getParameter("category");
     	
-    	Projects.updateProject(id, titleEN, titleUA, textEN, textUA, category);
+    	Projects.updateProject(id, titleEN, titleUA, textEN, textUA, avatar, category);
     	return new ModelAndView("redirect:" + "/system/index/"+category);
     }
         
     @RequestMapping(value = {"/system/do/deleteproject/{id}","/system/do/deleteproject/{id}/"})
-	public ModelAndView deleteArticle(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView deleteArticle(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
     	request.setCharacterEncoding("UTF-8");
     	return new ModelAndView("redirect:" + "/system/index/" + Projects.deleteProject(id));
+    }
+        
+    /* File functions */
+    
+    @RequestMapping(value = {"/tools/imageupload/{folder}/","/tools/imageupload/{folder}"}, method = RequestMethod.GET)
+    public ModelAndView fileManager (@PathVariable("folder") String folder,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String path = request.getParameter("path");
+        String type = request.getParameter("type");
+        String ckeditor = request.getParameter("CKEditor");
+        String num = request.getParameter("CKEditorFuncNum");
+        ModelAndView model = new ModelAndView("/tools/FileDrag");
+        model.addObject("ckeditor", ckeditor);
+        model.addObject("num", num);
+        model.addObject("type", type);
+        model.addObject("folder", folder.replace('|', '/'));
+        if("".equals(path)) {
+            model.addObject("path",path.replace(",", "/"));
+        }
+   	return model;
+    }
+        
+    @RequestMapping(value = {"/system/do/uploadimage", "/system/do/uploadimage/"}, method = RequestMethod.POST)
+    public @ResponseBody String uploadImageHandler(@RequestParam("file") MultipartFile file, @RequestParam("path") String path,  HttpServletRequest request) {
+    	String name = file.getOriginalFilename();
+        name = TransliteratorClass.transliterate(name);
+    	if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+            	File dir = new File(Constants.home+path);
+            	if (!dir.exists())
+                	dir.mkdirs();
+            	File serverFile = new File(dir.getAbsolutePath() + File.separator + name);
+            	try (BufferedOutputStream stream = new BufferedOutputStream( new FileOutputStream(serverFile))) {
+                	stream.write(bytes);
+            	}
+            	return "";
+            } catch (Exception e) {
+            	return "You failed to upload " + name + " => " + e.getMessage();
+            }
+    	} else {
+        	return "You failed to upload " + name + " because the file was empty.";
+    	}
+    }
+    
+    @RequestMapping(value = {"/system/do/uploadfile", "/system/do/uploadfile/"}, method = RequestMethod.POST)
+    public @ResponseBody String uploadFileHandler(@RequestParam("file") MultipartFile file, @RequestParam("path") String path,  HttpServletRequest request) {
+    	String name = file.getOriginalFilename();
+    	if (!file.isEmpty()) {
+        	try {
+            	byte[] bytes = file.getBytes();
+            	File dir = new File(Constants.home+path);
+            	if (!dir.exists())
+                	dir.mkdirs();
+            	File serverFile = new File(dir.getAbsolutePath() + File.separator + name);
+            	try (BufferedOutputStream stream = new BufferedOutputStream( new FileOutputStream(serverFile))) {
+                	stream.write(bytes);
+            	}
+            	return "";
+        	} catch (Exception e) {
+            	return "You failed to upload " + name + " => " + e.getMessage();
+        	}
+    	} else {
+        	return "You failed to upload " + name + " because the file was empty.";
+    	}
+    }
+    
+    @RequestMapping(value = "/system/do/removefile", method = RequestMethod.GET)
+    public @ResponseBody String removeFileOrDir(HttpServletRequest request) {
+    	String path = request.getParameter("path");
+    	File temp = new File(Constants.home + path);
+    	Boolean result = temp.delete();
+    	return result.toString();
     }
 }

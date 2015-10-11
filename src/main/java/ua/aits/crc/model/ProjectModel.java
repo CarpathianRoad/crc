@@ -24,6 +24,7 @@ public class ProjectModel {
     public String project_name_en;
     public String project_text_ua;
     public String project_text_en;
+    public String project_avatar;
     public Integer project_category;
     public String project_lang;
     
@@ -83,6 +84,15 @@ public class ProjectModel {
     public void setProject_lang(String project_lang) {
         this.project_lang = project_lang;
     }
+
+    public String getProject_avatar() {
+        return project_avatar;
+    }
+
+    public void setProject_avatar(String project_avatar) {
+        this.project_avatar = project_avatar;
+    }
+    
     
     public List<ProjectModel> getProjectsByCategory(String catID) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException {
         ResultSet result = DB.getResultSet("SELECT * FROM projects WHERE projects.project_category = " + catID + " AND projects.project_is_delete = 0 ORDER BY projects.project_id");
@@ -94,6 +104,7 @@ public class ProjectModel {
             temp.setProject_name_ua(result.getString("project_name_ua").replace("\"","&quot;"));
             temp.setProject_text_en(result.getString("project_text_en"));
             temp.setProject_text_ua(result.getString("project_text_ua"));
+            temp.setProject_avatar(result.getString("project_avatar"));
             temp.setProject_category(result.getInt("project_category"));
             String lang = "";
         	if(!"".equals(temp.project_name_en) && temp.project_name_en != null) {
@@ -121,23 +132,25 @@ public class ProjectModel {
         temp.setProject_name_ua(result.getString("project_name_ua").replace("\"","&quot;"));
         temp.setProject_text_en(result.getString("project_text_en"));
         temp.setProject_text_ua(result.getString("project_text_ua"));
+        temp.setProject_avatar(result.getString("project_avatar"));
         temp.setProject_category(result.getInt("project_category"));
         DB.closeCon();    
         return temp;
     }
     
-    public void insertProject(String titleEN, String titleUA, String textEN, String textUA, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        DB.runQuery("INSERT INTO `projects`(`project_name_ua`, `project_name_en`, `project_text_ua`, `project_text_en`, `project_category`) VALUES ("
-            	+ "'"+StringEscapeUtils.escapeSql(titleEN)+"','"+StringEscapeUtils.escapeSql(titleUA)+"','"+StringEscapeUtils.escapeSql(textEN)+"','"+StringEscapeUtils.escapeSql(textUA)+"','"+category+"');");
+    public void insertProject(String titleEN, String titleUA, String textEN, String textUA, String avatar, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        DB.runQuery("INSERT INTO `projects`(`project_name_ua`, `project_name_en`, `project_text_ua`, `project_text_en`, `project_avatar`, `project_category`) VALUES ("
+            	+ "'"+StringEscapeUtils.escapeSql(titleUA)+"','"+StringEscapeUtils.escapeSql(titleEN)+"','"+StringEscapeUtils.escapeSql(textUA)+"','"+StringEscapeUtils.escapeSql(textEN)+"','"+avatar+"','"+category+"');");
     	DB.closeCon();
     }
     
-    public void updateProject(String id, String titleEN, String titleUA, String textEN, String textUA, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void updateProject(String id, String titleEN, String titleUA, String textEN, String textUA, String avatar, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         DB.runQuery("UPDATE `projects` SET "
                 + "`project_name_ua`='"+StringEscapeUtils.escapeSql(titleUA)+"',"
                 + "`project_name_en`='"+StringEscapeUtils.escapeSql(titleEN)+"',"
                 + "`project_text_ua`='"+StringEscapeUtils.escapeSql(textUA)+"',"
-                + "`project_text_en`='"+StringEscapeUtils.escapeSql(textEN)+"'"
+                + "`project_text_en`='"+StringEscapeUtils.escapeSql(textEN)+"',"
+                + "`project_avatar`='"+avatar+"'"
                 + " WHERE project_id = "+id+";");
     	DB.closeCon();
     }

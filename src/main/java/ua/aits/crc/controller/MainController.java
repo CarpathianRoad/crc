@@ -5,6 +5,8 @@
  */
 package ua.aits.crc.controller;
 
+import java.sql.SQLException;
+import java.text.ParseException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Scope;
@@ -20,6 +22,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import org.springframework.web.bind.annotation.PathVariable;
+import ua.aits.crc.model.ProjectModel;
 
 /**
  *
@@ -28,9 +32,16 @@ import javax.mail.internet.MimeMessage;
 @Controller
 @Scope("session")
 public class MainController {
-    @RequestMapping(value = {"/","/index", "/main", "/home"}, method = RequestMethod.GET)
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response)  {
-        ModelAndView model = new ModelAndView("indexUA");
+    
+    ProjectModel Projects = new ProjectModel();
+    
+    @RequestMapping(value = {"/{lan}/index", "/{lan}/main", "/{lan}/home"}, method = RequestMethod.GET)
+    public ModelAndView index(@PathVariable("lan") String lan, HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException  {
+        ModelAndView model = new ModelAndView("index"+lan.toUpperCase());
+        model.addObject("energy", Projects.getProjectsByCategory("1"));
+        model.addObject("ecology", Projects.getProjectsByCategory("2"));
+        model.addObject("tourism", Projects.getProjectsByCategory("3"));
+        model.addObject("soc-projects", Projects.getProjectsByCategory("4"));
         return model;
     }
     @RequestMapping(value = {"/indexEN"}, method = RequestMethod.GET)
@@ -43,9 +54,11 @@ public class MainController {
         ModelAndView model = new ModelAndView("indexUA");
         return model;
     }
-    @RequestMapping(value = {"/project"}, method = RequestMethod.GET)
-    public ModelAndView project(HttpServletRequest request, HttpServletResponse response)  {
+    @RequestMapping(value = {"/{lan}/project/{id}"}, method = RequestMethod.GET)
+    public ModelAndView project(@PathVariable("lan") String lan, @PathVariable("id") String id, HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException  {
         ModelAndView model = new ModelAndView("projectPage");
+        model.addObject("project", Projects.getProjectByID(id));
+        model.addObject("lan", lan);
         return model;
     }
     

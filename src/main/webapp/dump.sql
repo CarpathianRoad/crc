@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2015 at 07:35 PM
+-- Generation Time: Oct 11, 2015 at 11:15 PM
 -- Server version: 10.0.21-MariaDB-log
--- PHP Version: 5.6.13
+-- PHP Version: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -54,17 +54,10 @@ CREATE TABLE `projects` (
   `project_name_en` varchar(320) NOT NULL,
   `project_text_ua` text NOT NULL,
   `project_text_en` text NOT NULL,
+  `project_avatar` varchar(500) NOT NULL,
   `project_category` int(11) NOT NULL,
   `project_is_delete` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `projects`
---
-
-INSERT INTO `projects` (`project_id`, `project_name_ua`, `project_name_en`, `project_text_ua`, `project_text_en`, `project_category`, `project_is_delete`) VALUES
-(1, 'title ua 2', 'Title en', '<p>title&nbsp;</p>\r\n', '<p>title ua</p>\r\n', 1, 1),
-(2, 'Tourist 1', 'Tourist 2', '<p>Tourist 1Tourist 1Tourist 1Tourist 1Tourist 1</p>\r\n', '<p>Tourist 1Tourist 1Tourist 1Tourist 1</p>\r\n', 3, 0);
 
 --
 -- Indexes for dumped tables
@@ -95,8 +88,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

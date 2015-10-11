@@ -107,6 +107,7 @@
     <script src="${Constants.URL}js/bootstrap/bootstrap.min.js"></script>
     <script src="${Constants.URL}js/bootstrap/bootstrap-select.js"></script>
     <script src="${Constants.URL}js/bootstrap/bootstrap-switch.js"></script>
+    <script src="${Constants.URL}js/plugins/dropzone.js"></script>
     <script>
         $(document).ready(function () {
             if('${Constants.URL}' === '/') {

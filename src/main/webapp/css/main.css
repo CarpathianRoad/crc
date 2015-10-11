@@ -42,7 +42,7 @@ header {
     width: 1351px;
     background-color: #e4ebed;
     z-index: 9999;
-    height: 583px;
+    height: 650px;
     background-size: 100%;
     background-image: url(../images/mountains-1.png);
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@ header {
     position: relative;
 }
 main {
-	width: 1346px;
+	width: 1351px;
     margin: auto;
     margin-bottom: 0;
     margin-top: 0px;
@@ -207,8 +207,24 @@ nav#nav-main li.blue {
     display: block;
     letter-spacing: 0.0pt;
 }
+.text-block span.descr-text h4 {
+    padding: 0;
+    margin: 0;
+}
 .image-block img {
 	margin-bottom: -15px;
+}
+#energy .image-block img {
+    width: 571px;
+}
+#ecology .image-block img {
+    width: 562px;
+}
+#tourism .image-block img {
+    width: 634px;
+}
+#soc-projects .image-block img {
+    width: 604px;
 }
 .descr-button {
 	cursor: pointer;
@@ -491,7 +507,7 @@ body#project-body {
     background-repeat: no-repeat;
 }
 body#project-body footer {
-    padding: 36px 0 0 200px;
+    padding: 20px 0 0 50px;
 }
 body#project-body header{
     height: 400px;
@@ -539,4 +555,197 @@ body#project-body section .main-block .text-block{
     padding: 2px 50px 50px 50px;
     text-align: justify;
     font-size: 25px;
+}
+body#project-body .home-icon h3{
+    text-align: center;
+    color: #fff;
+    margin-top: 103px;
+    font-size: 39px;
+    letter-spacing: 0.06em;
+    margin-left: 30px;
+}
+@media all and (max-device-width: 720px) {
+    header{
+        width: 100%;
+        background-size: cover;
+    }
+    .sub-header{
+        padding: 0 25px;
+    }
+    .logo-block .brand img{
+        margin-top: 40px;
+        width: 100%;
+    }
+    main{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    section{
+        width: auto;
+        box-sizing: border-box;
+        padding: 0 25px;
+    }
+    .main-block{
+        width: 100%;
+    }
+    #energy{
+        padding: 0 25px;
+        height: auto;
+    }
+    #energy .left-block{
+        width: 100%;
+        width: auto;
+        height: auto;
+        margin-top: -30px;
+    }
+    .text-block{
+        width: 100%;
+        height: auto;
+        padding: 30px !important;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .side-block{
+        margin-top: 0;
+        width: 100%;
+    }
+    .descr-button{
+        position: static;
+        margin-bottom: 0;
+        bottom: 0;
+        left: 0;
+        padding: 2px 40px 2px 40px;
+    }
+    .image-block img{
+        width: 100%;
+    }
+    #ecology{
+        margin-top: 30px;
+        height: auto;
+        padding-bottom: 30px;
+    }
+    #ecology .right-block{
+        width: 100%;
+        height: auto;
+        margin-top: -30px;
+    }
+    #ecology span.descr-text{
+        width: 100%;
+    }
+    #tourism{
+        height: auto;
+    }
+    #tourism .left-block{
+        width: 100%;
+        height: auto;
+        margin-top: -30px;
+    }
+    #tourism span.descr-text{
+        width: 100%;
+    }
+    #soc-projects{
+        height: auto;
+        margin-top: 30px;
+        padding-bottom: 30px;
+    }
+    #soc-projects .right-block{
+        width: 100%;
+        height: auto;
+        margin-top: -30px;
+    }
+    #soc-projects span.descr-text{
+        width: 100%;
+    }
+    #contacts{
+        margin-top: 30px;
+        padding: 0 25px;
+        height: auto !important;
+    }
+    #contacts .main-block{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    #contacts .side-block{
+        width: 100%;
+        height: auto;
+    }
+    .contact-button{
+        position: static;
+        padding: 3px 20px 2px 20px;
+        bottom: 0;
+    }
+    .left-block .text-block-contacts{
+        margin: 0;
+    }
+    .left-block .text-block-contacts{
+        width: auto;
+        padding: 10px 25px;
+        box-sizing: border-box;
+    }
+    .right-block .text-block-contacts{
+        margin: 0;
+        padding: 0 25px;
+        text-align: center;
+    }
+    #contacts .right-block p{
+        font-size: 12px;
+        text-align: left;
+    }
+    .text-block span.descr-text{
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+    .contacts-title span{
+        font-size: 20px;
+    }
+    .contacts-title{
+        font-size: 13px;
+    }
+    #contacts .left-block p{
+        font-size: 13px;
+    }
+    #contacts .right-block{
+        margin-top: -45px;
+        padding-bottom: 25px;
+    }
+    .left-block{
+        float: none;
+    }
+    .right-block{
+        float: none;
+    }
+    .main-header-block{
+        padding-top: 15px;
+    }
+    footer{
+        width: 100%;
+        height: auto;
+    }
+    footer div{
+        width: 100%;
+        padding: 25px;
+    }
+    .nav-arrow{
+        display: none;
+    }
+}
+.portfolio-left-arrow {
+  background-image: url(../images/arrow_left.png);
+  width: 57px;
+  height: 70px;
+  margin-top: 200px;
+  position: absolute;
+  left: 72px;
+}
+.portfolio-right-arrow {
+  background-image: url(../images/arrow_right.png);
+  width: 57px;
+height: 70px;
+margin-top: 200px;
+position: absolute;
+right: 72px;
+}
+.portfolio-block {
+  padding: 99px 50px 10px 72px;
 }

@@ -22,6 +22,8 @@
 	<form action="${Constants.URL}system/do/editdata" name="addArticleForm" id="addForm" method="POST" type="multipart/form-data">
             <input type="hidden" class="form-control" name="category" value="${category}">
             <input type="hidden" class="form-control" name="project_id" value="${project.project_id}">
+            <input type="hidden" class="form-control" id="avatar_path" name="avatar_path">
+            <input type="hidden" name="dir" id="dir-name" value="${folder}" />
             <div class="row add-row">
                 <div class="col-lg-12 margintop30 field">
                     <label for="tlt">Project name <span class="red-star">*</span></label>
@@ -55,6 +57,15 @@
             </div>
             <hr>
         </form>
+        <div class="row add-row">
+            <div class="col-lg-12 margintop30 field">
+                <label for="tlt">Project avatar</label><br/>
+            </div>
+        </div>
+        <form action="${Constants.URL}system/do/uploadfile" class="dropzone"  id="my-awesome-dropzone-gal">
+            <input type="hidden" name="path" value="/files/avatars/" />
+            <input type="file" name="file" style="display:none" />
+        </form>
         <p>
             <button class="btn btn-success margintop30 marginbottom30 sudmitData" type="submit">Save changes</button>
             <button type="button" class="btn btn-danger btn-mini" data-toggle="modal" data-target="#shureModal">Back to category</button>
@@ -84,11 +95,19 @@
 <script src="${Constants.URL}js/plugins/jquery.mb.browser.min.js"></script>
 <script> 
     $(document).ready(function () { 
+        $("#my-awesome-dropzone-gal").dropzone({ 
+            url: "${Constants.URL}system/do/uploadfile",
+            addRemoveLinks: true
+        });
         var currentLang = $(".lang-switch-text button.active").attr("id");
         $(".textareas .textarea-msg[lang='"+currentLang+"']").show();
         var currentLangT = $(".lang-switch-title button.active").attr("id");
         $(".input-title-lang[lang='"+currentLangT+"']").show();
         initCKE();
+        if('${project.project_avatar}' !== null && '${project.project_avatar}' !== ''){
+            $("#my-awesome-dropzone-gal .dz-message").hide();
+            $("#my-awesome-dropzone-gal").append('<div class="dz-preview dz-file-preview dz-processing dz-success dz-complete"><div class="dz-image"><img data-dz-thumbnail=""></div><div class="dz-details"><div class="dz-size"><span data-dz-size="">0</span></div><div class="dz-filename"><span data-dz-name="">${project.project_avatar}</span></div></div><div class="dz-error-message"><span data-dz-errormessage=""></span></div><div class="dz-success-mark"></div><a class="dz-remove" href="javascript:undefined;" onclick="deleteFile(this)" data-dz-remove="">Remove file</a></div>');
+        } 
     });
     
     $(".lang-switch-text button").click(function(){
@@ -117,6 +136,7 @@
             goToByScroll("active-validation");
         }
         if(isValidate) {
+            $("#avatar_path").val($(".dz-details .dz-filename span").first().text());
             $("#addForm").submit();
         }
     });
@@ -125,6 +145,20 @@
         $('html,body').animate({
             scrollTop: $("#"+id).offset().top-150},
             'slow');
+    }
+    function deleteFile(temp){
+        var path = $("#dir-name").val() + "/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
+        jQuery.ajax({
+            url: '${Constants.URL}system/do/removefile',
+            cache: false,
+            contentType: false,
+            processData: false,
+            type: 'GET',
+            data: 'path='+path,
+            success: function(data){
+                console.log(data);
+            }
+        });
     }
     function imageInserted(){ 
     $("label.cke_dialog_ui_labeled_label:contains('HSpace')").next().find(".cke_dialog_ui_input_text").val("15");

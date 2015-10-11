@@ -1,6 +1,6 @@
 <%-- 
-    Document   : indexUA
-    Created on : Oct 6, 2015, 11:48:30 AM
+    Document   : indexEN
+    Created on : Oct 12, 2015, 12:27:56 AM
     Author     : kiwi
 --%>
 
@@ -24,21 +24,21 @@
             <div class="sub-header">
 				<div class="menu-block">
 					<div class="closed-menu">
-						<span class="menu-text">Меню</span>
+						<span class="menu-text">Menu</span>
 						<img class="menu-button" src="${Constants.URL}images/menu-icon.png" />
 					</div>
 					<div class="menu-opened">
 						<ul class="language-block">
-                                                    <li class="active"><a href="${Constants.URL}ua/index">UA</a></li>
-                                                    <li><a href="${Constants.URL}en/index">EN</a></li>
+                                                    <li><a href="${Constants.URL}ua/index">UA</a></li>
+                                                    <li class="active"><a href="${Constants.URL}en/index">EN</a></li>
 						</ul>
 						<nav role="navigation" id="nav-main">
 							<ul class="navbar">
 								<li style="display:none;" class="cyan" id="head-item-menu-item"><a href="#head-item">Head</a></li>
-								<li class="cyan" id="energy-menu-item"><a href="#energy">Енергозбереження</a></li>
-								<li class="green" id="ecology-menu-item"><a href="#ecology">Екологія</a></li>
-								<li class="dark-green" id="tourism-menu-item"><a href="#tourism">Туризм</a></li>
-								<li class="blue" id="soc-projects-menu-item"><a href="#soc-projects">Соцпроекти</a></li>
+								<li class="cyan" id="energy-menu-item"><a href="#energy">Energy saving</a></li>
+								<li class="green" id="ecology-menu-item"><a href="#ecology">Ecology</a></li>
+								<li class="dark-green" id="tourism-menu-item"><a href="#tourism">Tourism</a></li>
+								<li class="blue" id="soc-projects-menu-item"><a href="#soc-projects">Social projects</a></li>
 								<li id="contacts-menu-item"><a href="#contacts">Контакти</a></li>
 							</ul>
 						</nav>
@@ -55,23 +55,23 @@
 			<div class="main-block">
 				<div class="main-header-block">
 					<img src="${Constants.URL}images/icon-energy.png" />
-					<h4>Енергозбереження</h4>
+					<h4>Energy saving</h4>
 				</div>
                                 <c:choose>
                                     <c:when test="${energy == '' || energy == null || empty energy}">
                                     <div class="side-block left-block">
-                                            <div class="text-block">
-                                                    <span class="descr-text">Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
-                                                            Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
-                                                    </span>
-                                                    <a class="descr-button">Детальніше</a>
-                                            </div>
+					<div class="text-block">
+                                            <span class="descr-text">
+                                                We implement projects in the sphere of energy saving of socially important facilities, introduction of innovative energy efficiency technologies. A successful example of realizing such initiatives is the project “Through energy inspiring future generations” on introduction of new technologies for energy saving in the kindergarten.
+                                            </span>
+						<a class="descr-button">Read more</a>
+					</div>
                                     </div>
                                     <div class="side-block right-block">
                                             <div class="image-block">
                                                     <img src="${Constants.URL}images/bg-energy.png"/>
                                             </div>
-                                    </div>  
+                                    </div>   
                                     </c:when>
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
@@ -82,28 +82,28 @@
                                         <ul class="slider" id="sliderName">
                                             <li class="slide">
                                                 <div class="side-block left-block">
-                                                        <div class="text-block">
-                                                                <span class="descr-text">Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
-                                                                        Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
-                                                                </span>
-                                                                <a class="descr-button">Детальніше</a>
-                                                        </div>
+                                                    <div class="text-block">
+                                                        <span class="descr-text">
+                                                            We implement projects in the sphere of energy saving of socially important facilities, introduction of innovative energy efficiency technologies. A successful example of realizing such initiatives is the project “Through energy inspiring future generations” on introduction of new technologies for energy saving in the kindergarten.
+                                                        </span>
+                                                            <a class="descr-button">Read more</a>
+                                                    </div>
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
                                                                 <img src="${Constants.URL}images/bg-energy.png"/>
                                                         </div>
-                                                </div>
+                                                </div>  
                                             </li>
                                             <c:forEach items="${energy}" var="project">
                                             <li class="slide">
                                                 <div class="side-block left-block">
                                                     <div class="text-block">
                                                         <span class="descr-text">
-                                                        <h4>${project.project_name_ua}</h4> <br/>
-                                                        ${project.project_text_ua}
+                                                        <h4>${project.project_name_en}</h4> <br/>
+                                                        ${project.project_text_en}
                                                         </span>
-                                                            <a class="descr-button" href="${Constants.URL}ua/project/${project.project_id}">Детальніше</a>
+                                                            <a class="descr-button" href="${Constants.URL}en/project/${project.project_id}">Read more</a>
                                                     </div>
                                                 </div>
                                                 <div class="side-block right-block">
@@ -121,25 +121,25 @@
 			</div>
 		</section>
 		<section id="ecology">
-			<div class="main-block">
+			<div class="main-block" va="${ecology}">
 				<div class="main-header-block">
 					<img src="${Constants.URL}images/icon-ecology.png" />
-					<h4>Екологія</h4>
+					<h4>Ecology</h4>
 				</div>
                                 <c:choose>
                                     <c:when test="${ecology == '' || ecology == null || empty ecology}">
-                                        <div class="side-block right-block">
-                                                <div class="text-block">
-                                                        <span class="descr-text">
-                                                        Ми підтримуємо  ініціативи місцевих  громад, що допомагають зменшити забруднення відходами, зберегти енергоресурси й довкілля. Ми допомагаємо в залученні  потенційних інвесторів та забезпеченні  співпраці громади з органами місцевої влади у вирішенні екологічних проблем територій.
-                                                        </span>
-                                                </div>
-                                        </div>
-                                        <div class="side-block left-block">
-                                                <div class="image-block">
-                                                        <img src="${Constants.URL}images/bg-ecology.png"/>
-                                                </div>
-                                        </div>
+                                    <div class="side-block right-block">
+                                            <div class="text-block">
+                                                    <span class="descr-text">
+                                                    We support initiatives of local communities that help to reduce waste pollution, save energy resources and environment. We help to attract potential investors and ensure cooperation of local communities with local authorities in solving environmental problems of the territories.
+                                                    </span>
+                                            </div>
+                                    </div>
+                                    <div class="side-block left-block">
+                                            <div class="image-block">
+                                                    <img src="${Constants.URL}images/bg-ecology.png"/>
+                                            </div>
+                                    </div>
                                     </c:when>
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
@@ -150,11 +150,11 @@
                                         <ul class="slider" id="sliderName">
                                             <li class="slide">
                                                 <div class="side-block right-block">
-                                                        <div class="text-block">
-                                                                <span class="descr-text">
-                                                                Ми підтримуємо  ініціативи місцевих  громад, що допомагають зменшити забруднення відходами, зберегти енергоресурси й довкілля. Ми допомагаємо в залученні  потенційних інвесторів та забезпеченні  співпраці громади з органами місцевої влади у вирішенні екологічних проблем територій.
-                                                                </span>
-                                                        </div>
+                                                    <div class="text-block">
+                                                            <span class="descr-text">
+                                                            We support initiatives of local communities that help to reduce waste pollution, save energy resources and environment. We help to attract potential investors and ensure cooperation of local communities with local authorities in solving environmental problems of the territories.
+                                                            </span>
+                                                    </div>
                                                 </div>
                                                 <div class="side-block left-block">
                                                         <div class="image-block">
@@ -167,10 +167,10 @@
                                                 <div class="side-block right-block">
                                                     <div class="text-block">
                                                             <span class="descr-text">
-                                                            <h4>${project.project_name_ua}</h4> <br/>
-                                                            ${project.project_text_ua}
+                                                            <h4>${project.project_name_en}</h4> <br/>
+                                                            ${project.project_text_en}
                                                             </span>
-                                                            <a class="descr-button" href="${Constants.URL}ua/project/${project.project_id}">Детальніше</a>
+                                                            <a class="descr-button" href="${Constants.URL}en/project/${project.project_id}">Read more</a>
                                                     </div>
                                                 </div>
                                                 <div class="side-block left-block">
@@ -191,23 +191,23 @@
 			<div class="main-block">
 				<div class="main-header-block">
 					<img src="${Constants.URL}images/icon-tourism.png" />
-					<h4>Туризм</h4>
+					<h4>Tourism</h4>
 				</div>
                                 <c:choose>
                                     <c:when test="${tourism == '' || tourism == null || empty tourism}">
-                                        <div class="side-block left-block">
-                                                <div class="text-block">
-                                                        <span class="descr-text">
-                                                        Ми відкриті для співпраці з активними туристичними суб’єктами та органами місцевої влади для реалізації корисних  ініціатив та проектів у сфері туризму, який має значний потенціал, щоб стати пріоритетною галуззю для розвитку регіону.
-                                                        </span>
-                                                    <a href="http://www.carpathianroad.com/ua/map" target="_blank" class="descr-button">Детальніше</a>
-                                                </div>
-                                        </div>
-                                        <div class="side-block right-block">
-                                                <div class="image-block">
-                                                        <a href="http://www.carpathianroad.com/ua/map" target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
-                                                </div>
-                                        </div>
+                                    <div class="side-block left-block">
+                                            <div class="text-block">
+                                                    <span class="descr-text">
+                                                    We are open for cooperation with active tourist actors and local authorities for implementation of useful initiatives and projects in tourism sphere that has a great potential to become a priority industry for regional development.
+                                                    </span>
+                                                <a href="http://www.carpathianroad.com/en/map" target="_blank" class="descr-button">Read more</a>
+                                            </div>
+                                    </div>
+                                    <div class="side-block right-block">
+                                            <div class="image-block">
+                                                    <a href="http://www.carpathianroad.com/en/map target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
+                                            </div>
+                                    </div>
                                     </c:when>
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
@@ -220,14 +220,14 @@
                                                 <div class="side-block left-block">
                                                         <div class="text-block">
                                                                 <span class="descr-text">
-                                                                Ми відкриті для співпраці з активними туристичними суб’єктами та органами місцевої влади для реалізації корисних  ініціатив та проектів у сфері туризму, який має значний потенціал, щоб стати пріоритетною галуззю для розвитку регіону.
+                                                                We are open for cooperation with active tourist actors and local authorities for implementation of useful initiatives and projects in tourism sphere that has a great potential to become a priority industry for regional development.
                                                                 </span>
-                                                            <a href="http://www.carpathianroad.com/ua/map" target="_blank" class="descr-button">Детальніше</a>
+                                                            <a href="http://www.carpathianroad.com/en/map" target="_blank" class="descr-button">Read more</a>
                                                         </div>
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                                <a href="http://www.carpathianroad.com/ua/map" target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
+                                                                <a href="http://www.carpathianroad.com/en/map" target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
                                                         </div>
                                                 </div>
                                             </li>
@@ -236,10 +236,10 @@
                                                 <div class="side-block left-block">
                                                         <div class="text-block">
                                                                 <span class="descr-text">
-                                                                <h4>${project.project_name_ua}</h4> <br/>
-                                                                ${project.project_text_ua}
+                                                                <h4>${project.project_name_en}</h4> <br/>
+                                                                ${project.project_text_en}
                                                                 </span>
-                                                                <a class="descr-button" href="${Constants.URL}ua/project/${project.project_id}">Детальніше</a>
+                                                                <a class="descr-button" href="${Constants.URL}en/project/${project.project_id}">Read more</a>
                                                         </div>
                                                 </div>
                                                 <div class="side-block right-block">
@@ -249,6 +249,7 @@
                                                 </div>
                                             </li>    
                                             </c:forEach>
+                                            
                                         </ul>
                                     </div>    
                                     </c:otherwise>
@@ -259,23 +260,22 @@
 			<div class="main-block">
 				<div class="main-header-block">
 					<img src="${Constants.URL}images/icon-soc-projects.png" />
-					<h4>Соцпроекти</h4>
+					<h4>Social projects</h4>
 				</div>
-                                        
                                 <c:choose>
                                     <c:when test="${soc-projects == '' || soc-projects == null || empty soc-projects}">
-                                        <div class="side-block right-block">
-                                                <div class="text-block">
-                                                        <span class="descr-text">
-                                                        Ми віримо, що люди, місцеві громади відіграють ключову роль в розвитку регіону. Соціальна робота є багатогранною та охоплює усі сфери життя. Розвиток освіти, медицини, культури,– сфери надзвичайно важливі, але завжди обмежені в фінансуванні. Ми підтримуємо будь-які шляхетні започаткування та корисні ініціативи.
-                                                        </span>
-                                                </div>
-                                        </div>
-                                        <div class="side-block left-block">
-                                                <div class="image-block">
-                                                        <img src="${Constants.URL}images/bg-soc-projects.png"/>
-                                                </div>
-                                        </div>
+                                    <div class="side-block right-block">
+                                            <div class="text-block">
+                                                    <span class="descr-text">
+                                                    We believe that people, local communities play a key role in the development of the region. Social work is multifaceted and covers all areas of life. Development of education, medicine, culture- these are areas extremely important, but always limited in funding. We support any noble undertakings and useful initiatives.
+                                                    </span>
+                                            </div>
+                                    </div>
+                                    <div class="side-block left-block">
+                                            <div class="image-block">
+                                                    <img src="${Constants.URL}images/bg-soc-projects.png"/>
+                                            </div>
+                                    </div>
                                     </c:when>
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
@@ -288,7 +288,7 @@
                                                 <div class="side-block right-block">
                                                         <div class="text-block">
                                                                 <span class="descr-text">
-                                                                Ми віримо, що люди, місцеві громади відіграють ключову роль в розвитку регіону. Соціальна робота є багатогранною та охоплює усі сфери життя. Розвиток освіти, медицини, культури,– сфери надзвичайно важливі, але завжди обмежені в фінансуванні. Ми підтримуємо будь-які шляхетні започаткування та корисні ініціативи.
+                                                                We believe that people, local communities play a key role in the development of the region. Social work is multifaceted and covers all areas of life. Development of education, medicine, culture- these are areas extremely important, but always limited in funding. We support any noble undertakings and useful initiatives.
                                                                 </span>
                                                         </div>
                                                 </div>
@@ -303,10 +303,10 @@
                                                 <div class="side-block right-block">
                                                         <div class="text-block">
                                                                 <span class="descr-text">
-                                                                <h4>${project.project_name_ua}</h4> <br/>
-                                                                ${project.project_text_ua}
+                                                                <h4>${project.project_name_en}</h4> <br/>
+                                                                ${project.project_text_en}
                                                                 </span>
-                                                                <a class="descr-button" href="${Constants.URL}ua/project/${project.project_id}">Детальніше</a>
+                                                                <a class="descr-button" href="${Constants.URL}en/project/${project.project_id}">Read more</a>
                                                         </div>
                                                 </div>
                                                 <div class="side-block left-block">
@@ -328,40 +328,38 @@
 				<div class="side-block left-block">
 				<div class="text-block-contacts">
 				<div class="contacts-title">
-                                    <span>ГО  "Перехресні зв’язки"</span> cтворена для:
+                                    Among the objectives of NGO “Crossroad connections” are the following:
 				</div> 
 						
 					<p>
-					-  Сприяння практичному здійсненню загальнодержавних, регіональних, місцевих та міжнародних програм, спрямованих на покращення соціально-економічного становища регіону, 
-                                            реалізації цікавих, інноваційних та суспільно-значущих проектів.
+					-  Contributing to practical implementation of national, regional, local and international programmes directed to improvement of social and economic situation of the region, implementation of interesting, innovative and socially important projects.
 					</p>	
 					<p>
-					-  Сприяння залагодженню партнерств місцевих організацій, та налагодження партнерств з організаціями з інших країн направлених на підтримку транскордонної та транснаціональної співпраці.
-					</p>	
-					<p>
-					-  Збір і розповсюдження інформації про найкращий досвід ЄС у розробці і реалізації стратегій (програм) соціально-економічної політики, регіонального, місцевого розвитку та реалізації транскордонних проектів.
+					-  Contributing to establishing of partnerships of local organizations and partnerships with organizations from other countries directed to the support of cross-border and transnational cooperation aimed at using of new possibilities provided by the European Union.
                                         </p>	
-                                        
+					<p>
+					-  Improving of the level of knowledge and practical skills of local organizations in the sphere of cooperation with international organizations.
+                                        </p>	
 				</div>	
 				</div>
 				<div id="mail-block" class="side-block right-block">
-						<h5>Контактні дані</h5>
+						<h5>Contacts</h5>
 					<div class="text-block-contacts">
 						<p>
-						Адреса: <br/>
-						88015, Україна, Закарпатська обл., <br/>
-						м.Ужгород, вул. Богомольця 21 (5 пов.)
+						Adress: <br/>
+						88015, Ukraine, Transcarpathian region., <br/>
+                                                Uzhgorod, st. Bohomoltsia 21 (5 fl.)
 						</p>
 						<p>
-						Контактна особа: <br/>
-						Захаркевич Тетяна <br/>
-						Заступник Голови ГО
+						Contact person: <br/>
+                                                Zaharkevych Tatiana <br/>
+                                                Deputy Chairman of the NGO
 						</p>
 						<p>
-						Тел.: + 038(0312) 4299995 <br/>
+						Phone: + 038(0312) 4299995 <br/>
 						E-mail: office@crc.org.ua
 						</p>
-						<a class="contact-button mail-us">Надіслати листа</a>
+						<a class="contact-button mail-us">Send message</a>
 					</div>
 				</div>
 				<div id="mail-form" class="side-block right-block">
@@ -369,7 +367,7 @@
 						<div id="form-div">
 							<form class="form" id="form1">
 							<p class="name">
-								<label>Ім'я</label>
+								<label>Name</label>
 								<input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" id="name" />
 							</p>
 							<p class="email">
@@ -377,11 +375,11 @@
 								<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" />
 							</p>
 							<p class="text">
-								<label>Повідомлення</label>
+								<label>Message</label>
 								<textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment"></textarea>
 							</p>
 							<div class="submit">
-								<input type="button" value="Надіслати" id="button-blue"/>
+								<input type="button" value="Send" id="button-blue"/>
 								<span class="validation"></span>
 							</div>
 							</form>
@@ -398,8 +396,8 @@
 				<div id="mail-complete" class="side-block right-block">
 					<div class="text-block-contacts-loading">
 						<div class="main-text-block">
-							Ваш лист відправлено. <br/>
-							Зачекайте хвилинку.<br/>
+							Your letter went to our mailbox, thanks. <br/>
+                                                        Please wait.<br/>
 							<img class="loading-gif" src="${Constants.URL}images/loading-x.gif" />
 						</div>
 					</div>
@@ -418,4 +416,5 @@
 	<script src="${Constants.URL}js/main.js"></script>
     </body>
 </html>
+
 

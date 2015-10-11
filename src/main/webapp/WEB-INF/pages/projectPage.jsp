@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="Constants" class="ua.aits.crc.functions.Constants" scope="session"/>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,8 +15,8 @@
         <title>Carpathian Road</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/png" href="./images/favicon.ico"/>
-	<link href="./css/main.css" rel="stylesheet" media="all">
+        <link rel="shortcut icon" type="image/png" href="${Constants.URL}images/favicon.ico"/>
+	<link href="${Constants.URL}css/main.css" rel="stylesheet" media="all">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     </head>
     <body class="en" id="project-body">
@@ -27,25 +28,35 @@
                         <li class="separator">|</li>
                         <li><a href="">EN</a></li>
                     </ul>
-                    <a class="home-icon" href="${Consntants.URL}index"><img class="home-button" src="images/home-icon.png" /></a>
+                    <a class="home-icon" href="${Constants.URL}${lan}/index"><img class="home-button" src="${Constants.URL}images/home-icon.png" />
+                        <h3>Carpathian Road</h3></a>
                 </div>
                 <div class="logo-block">
-                    <a class="brand"><img src="images/logo-white.png" /></a>
+                    <a class="brand"><img src="${Constants.URL}images/logo-white.png" /></a>
                 </div>
             </div>
 	</header>
 	<main role="main">
 		<section>
 			<div class="main-block">
-				<div class="main-header-block">
-					<h4>Енергозбереження</h4>
-				</div>
-					<div class="text-block">
-						Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
-							Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
-						
-					</div>
-				
+                            <c:choose>
+                                    <c:when test="${lan == 'ua'}">
+                                        <div class="main-header-block">
+                                            <h4>${project.project_name_ua}</h4>
+                                        </div>
+                                        <div class="text-block">
+                                            ${project.project_text_ua}
+                                        </div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <div class="main-header-block">
+                                            <h4>${project.project_name_en}</h4>
+                                        </div>
+                                        <div class="text-block">
+                                            ${project.project_text_en}
+                                        </div>
+                                    </c:otherwise>
+                                </c:choose>
 			</div>
 		</section>
 	</main>
@@ -56,6 +67,6 @@
 	</footer>
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-	<script src="./js/plugins/plugin.js"></script>
+	<script src="${Constants.URL}js/plugins/plugin.js"></script>
     </body>
 </html>

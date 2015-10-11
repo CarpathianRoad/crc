@@ -8,6 +8,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="Constants" class="ua.aits.crc.functions.Constants" scope="session"/>
 <%
-    String redirectURL = Constants.URL+"index";
+    String redirectURL = Constants.URL+"ua/index";
     response.sendRedirect(redirectURL);
 %>
