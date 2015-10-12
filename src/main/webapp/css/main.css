@@ -72,6 +72,12 @@ footer div span.reserved {
     margin-left: 6px;
     letter-spacing: 0.03em;
 }
+footer .enter-link {
+    float: right;
+}
+footer .enter-link img {
+    width: 20px;
+}
 section {
 	width: 100%;
 }
