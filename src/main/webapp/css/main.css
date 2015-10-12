@@ -217,6 +217,9 @@ nav#nav-main li.blue {
     padding: 0;
     margin: 0;
 }
+.image-block {
+    overflow: hidden;
+}
 .image-block img {
 	margin-bottom: -15px;
 }
@@ -837,5 +840,13 @@ body#project-body .home-icon h3{
         padding: 0;
     }
 }
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.1); }
+.grow { -webkit-transition: transform 2s ease-in-out;
+    -moz-transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in-out; }
+.grow:hover {  
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }

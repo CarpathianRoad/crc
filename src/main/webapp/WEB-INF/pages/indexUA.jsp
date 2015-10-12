@@ -64,12 +64,12 @@
                                                     <span class="descr-text">Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
                                                             Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
                                                     </span>
-                                                    <a href="${Constants.URL}ua/tenerife" target="_blank" class="descr-button">Детальніше</a>
+                                                    <a href="${Constants.URL}ua/tenerife" class="descr-button">Детальніше</a>
                                             </div>
                                     </div>
                                     <div class="side-block right-block">
                                             <div class="image-block">
-                                                    <a href="${Constants.URL}ua/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
+                                                    <a href="${Constants.URL}ua/tenerife"><img class="grow" src="${Constants.URL}images/bg-energy.png"/></a>
                                             </div>
                                     </div>  
                                     </c:when>
@@ -86,12 +86,12 @@
                                                                 <span class="descr-text">Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
                                                                         Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
                                                                 </span>
-                                                                <a href="${Constants.URL}ua/tenerife" target="_blank" class="descr-button">Детальніше</a>
+                                                                <a href="${Constants.URL}ua/tenerife" class="descr-button">Детальніше</a>
                                                         </div>
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                            <a href="${Constants.URL}ua/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
+                                                            <a href="${Constants.URL}ua/tenerife"><img class="grow" src="${Constants.URL}images/bg-energy.png"/></a>
                                                         </div>
                                                 </div>
                                             </li>
@@ -108,7 +108,7 @@
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}files/avatars/${project.project_avatar}"/>
+                                                                <img class="grow" src="${Constants.URL}files/avatars/${project.project_avatar}"/>
                                                         </div>
                                                 </div>  
                                             </li>    
@@ -137,7 +137,7 @@
                                         </div>
                                         <div class="side-block left-block">
                                                 <div class="image-block">
-                                                        <img src="${Constants.URL}images/bg-ecology.png"/>
+                                                        <img class="grow" src="${Constants.URL}images/bg-ecology.png"/>
                                                 </div>
                                         </div>
                                     </c:when>
@@ -158,7 +158,7 @@
                                                 </div>
                                                 <div class="side-block left-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}images/bg-ecology.png"/>
+                                                                <img class="grow" src="${Constants.URL}images/bg-ecology.png"/>
                                                         </div>
                                                 </div>
                                             </li>
@@ -175,7 +175,7 @@
                                                 </div>
                                                 <div class="side-block left-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}files/avatars/${project.project_avatar}"/>
+                                                                <img class="grow" src="${Constants.URL}files/avatars/${project.project_avatar}"/>
                                                         </div>
                                                 </div>
                                             </li>    
@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="side-block right-block">
                                                 <div class="image-block">
-                                                        <a href="http://www.carpathianroad.com/ua/map" target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
+                                                        <a href="http://www.carpathianroad.com/ua/map" target="_blank"><img class="grow" src="${Constants.URL}images/bg-tourism.png"/></a>
                                                 </div>
                                         </div>
                                     </c:when>
@@ -227,7 +227,7 @@
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                                <a href="http://www.carpathianroad.com/ua/map" target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
+                                                                <a href="http://www.carpathianroad.com/ua/map" target="_blank"><img class="grow" src="${Constants.URL}images/bg-tourism.png"/></a>
                                                         </div>
                                                 </div>
                                             </li>
@@ -244,7 +244,7 @@
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}files/avatars/${project.project_avatar}"/>
+                                                                <img class="grow" src="${Constants.URL}files/avatars/${project.project_avatar}"/>
                                                         </div>
                                                 </div>
                                             </li>    
@@ -273,7 +273,7 @@
                                         </div>
                                         <div class="side-block left-block">
                                                 <div class="image-block">
-                                                        <img src="${Constants.URL}images/bg-soc-projects.png"/>
+                                                        <img class="grow" src="${Constants.URL}images/bg-soc-projects.png"/>
                                                 </div>
                                         </div>
                                     </c:when>
@@ -294,7 +294,7 @@
                                                 </div>
                                                 <div class="side-block left-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}images/bg-soc-projects.png"/>
+                                                                <img class="grow" src="${Constants.URL}images/bg-soc-projects.png"/>
                                                         </div>
                                                 </div>
                                             </li>
@@ -311,7 +311,7 @@
                                                 </div>
                                                 <div class="side-block left-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}files/avatars/${project.project_avatar}"/>
+                                                                <img class="grow" src="${Constants.URL}files/avatars/${project.project_avatar}"/>
                                                         </div>
                                                 </div>
                                             </li>    
