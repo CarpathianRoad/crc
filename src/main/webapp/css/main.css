@@ -521,7 +521,7 @@ body#project-body header{
 }
 body#project-body header .language-block {
     text-align: right;
-    margin-right: 107px;
+    margin-right: 80px;
     margin-top: 20px;
     font-weight: 700;
 }
@@ -539,6 +539,10 @@ body#project-body header .home-icon {
         margin-right: 28px;
     display: block;
     margin-top: -47px;
+}
+body#project-body header .home-icon img {
+    width: 30px;
+    margin-top: 14px;
 }
 body#project-body section {
     margin-top: -100px;
@@ -565,7 +569,7 @@ body#project-body section .main-block .text-block{
 body#project-body .home-icon h3{
     text-align: center;
     color: #fff;
-    margin-top: 103px;
+    margin-top: 95px;
     font-size: 39px;
     letter-spacing: 0.06em;
     margin-left: 30px;

@@ -356,7 +356,7 @@
                                                 Deputy Chairman of the NGO
 						</p>
 						<p>
-						Phone: + 038(0312) 4299995 <br/>
+						Phone: + 38 (0312) 42 999 95  <br/>
 						E-mail: office@crc.org.ua
 						</p>
 						<a class="contact-button mail-us">Send message</a>
