@@ -64,12 +64,12 @@
                                             <span class="descr-text">
                                                 We implement projects in the sphere of energy saving of socially important facilities, introduction of innovative energy efficiency technologies. A successful example of realizing such initiatives is the project “Through energy inspiring future generations” on introduction of new technologies for energy saving in the kindergarten.
                                             </span>
-						<a class="descr-button">Read more</a>
+						<a href="${Constants.URL}en/tenerife" target="_blank" class="descr-button">Read more</a>
 					</div>
                                     </div>
                                     <div class="side-block right-block">
                                             <div class="image-block">
-                                                    <img src="${Constants.URL}images/bg-energy.png"/>
+                                                <a href="${Constants.URL}en/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
                                             </div>
                                     </div>   
                                     </c:when>
@@ -86,12 +86,12 @@
                                                         <span class="descr-text">
                                                             We implement projects in the sphere of energy saving of socially important facilities, introduction of innovative energy efficiency technologies. A successful example of realizing such initiatives is the project “Through energy inspiring future generations” on introduction of new technologies for energy saving in the kindergarten.
                                                         </span>
-                                                            <a class="descr-button">Read more</a>
+                                                            <a href="${Constants.URL}en/tenerife" target="_blank" class="descr-button">Read more</a>
                                                     </div>
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}images/bg-energy.png"/>
+                                                            <a href="${Constants.URL}en/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
                                                         </div>
                                                 </div>  
                                             </li>
@@ -205,7 +205,7 @@
                                     </div>
                                     <div class="side-block right-block">
                                             <div class="image-block">
-                                                    <a href="http://www.carpathianroad.com/en/map target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
+                                                    <a href="http://www.carpathianroad.com/en/map" target="_blank"><img src="${Constants.URL}images/bg-tourism.png"/></a>
                                             </div>
                                     </div>
                                     </c:when>

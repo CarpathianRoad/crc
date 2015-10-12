@@ -62,6 +62,13 @@ public class MainController {
         return model;
     }
     
+    @RequestMapping(value = {"/{lan}/tenerife"}, method = RequestMethod.GET)
+    public ModelAndView tenerife(@PathVariable("lan") String lan, HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException  {
+        ModelAndView model = new ModelAndView("tenerife");
+        model.addObject("lan", lan);
+        return model;
+    }
+    
     @RequestMapping(value = {"/sendmail/", "/sendmail"}, method = RequestMethod.GET)
     public @ResponseBody
     String sendMail(HttpServletRequest request, HttpServletResponse response) throws Exception {

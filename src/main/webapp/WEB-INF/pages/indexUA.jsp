@@ -64,12 +64,12 @@
                                                     <span class="descr-text">Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
                                                             Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
                                                     </span>
-                                                    <a class="descr-button">Детальніше</a>
+                                                    <a href="${Constants.URL}ua/tenerife" target="_blank" class="descr-button">Детальніше</a>
                                             </div>
                                     </div>
                                     <div class="side-block right-block">
                                             <div class="image-block">
-                                                    <img src="${Constants.URL}images/bg-energy.png"/>
+                                                    <a href="${Constants.URL}ua/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
                                             </div>
                                     </div>  
                                     </c:when>
@@ -86,12 +86,12 @@
                                                                 <span class="descr-text">Ми реалізуємо проекти в галузі енергозбереження суспільно-значущих об’єктів, впровадження інноваційних технологій енергоефективності.
                                                                         Успішним прикладом виконання таких ініціатив є проект «Через енергію надихаємо наступні покоління» по впровадженню нових технологій з енергозбереження в дитячому садочку. 
                                                                 </span>
-                                                                <a class="descr-button">Детальніше</a>
+                                                                <a href="${Constants.URL}ua/tenerife" target="_blank" class="descr-button">Детальніше</a>
                                                         </div>
                                                 </div>
                                                 <div class="side-block right-block">
                                                         <div class="image-block">
-                                                                <img src="${Constants.URL}images/bg-energy.png"/>
+                                                            <a href="${Constants.URL}ua/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
                                                         </div>
                                                 </div>
                                             </li>

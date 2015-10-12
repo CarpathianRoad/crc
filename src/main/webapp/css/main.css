@@ -617,7 +617,7 @@ body#project-body .home-icon h3{
         padding: 2px 40px 2px 40px;
     }
     .image-block img{
-        width: 100%;
+        width: 100% !important;
     }
     #ecology{
         margin-top: 30px;
