@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="side-block right-block">
                                             <div class="image-block">
-                                                <a href="${Constants.URL}en/tenerife" target="_blank"><img src="${Constants.URL}images/bg-energy.png"/></a>
+                                                <a href="${Constants.URL}en/tenerife" target="_blank"><img class="grow" src="${Constants.URL}images/bg-energy.png"/></a>
                                             </div>
                                     </div>   
                                     </c:when>
@@ -356,7 +356,7 @@
                                                 Deputy Chairman of the NGO
 						</p>
 						<p>
-						Phone: + 38 (0312) 42 999 95  <br/>
+						Phone: + 38 (0312) 42 99 95  <br/>
 						E-mail: office@crc.org.ua
 						</p>
 						<a class="contact-button mail-us">Send message</a>

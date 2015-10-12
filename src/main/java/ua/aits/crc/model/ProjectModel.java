@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.apache.commons.lang.StringEscapeUtils;
 import ua.aits.crc.functions.DB;
+import ua.aits.crc.functions.Helpers;
 
 /**
  *
@@ -99,11 +100,19 @@ public class ProjectModel {
     	List<ProjectModel> projects = new LinkedList<>();
         while (result.next()) {
             ProjectModel temp = new ProjectModel();
+            String text_ua = Helpers.html2text(result.getString("project_text_ua"));
+            String text_en = Helpers.html2text(result.getString("project_text_en"));
+            if(text_ua.length() > 250){
+                text_ua = text_ua.substring(0,250);
+            }
+            if(text_en.length() > 250){
+                text_en = text_en.substring(0,250);
+            }
             temp.setProject_id(result.getInt("project_id"));
             temp.setProject_name_en(result.getString("project_name_en").replace("\"","&quot;"));
             temp.setProject_name_ua(result.getString("project_name_ua").replace("\"","&quot;"));
-            temp.setProject_text_en(result.getString("project_text_en"));
-            temp.setProject_text_ua(result.getString("project_text_ua"));
+            temp.setProject_text_en(text_en);
+            temp.setProject_text_ua(text_ua);
             temp.setProject_avatar(result.getString("project_avatar"));
             temp.setProject_category(result.getInt("project_category"));
             String lang = "";

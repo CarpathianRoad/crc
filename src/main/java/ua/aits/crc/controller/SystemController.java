@@ -105,7 +105,7 @@ public class SystemController {
      * @throws java.lang.Exception  **/
     @RequestMapping(value = {"/system/ajax/checkUser", "/system/ajax/checkUser/"}, method = RequestMethod.GET)
     public @ResponseBody String checkUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        if("admin".equals(request.getParameter("user_name")) && "admin".equals(request.getParameter("user_password"))) {
+        if("admin".equals(request.getParameter("user_name")) && "ard3000!".equals(request.getParameter("user_password"))) {
             return "true";
         }
         else {

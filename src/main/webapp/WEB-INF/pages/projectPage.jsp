@@ -25,14 +25,13 @@
                 <div class="project-top-block">
                     <ul class="language-block">
                         <li class="active"><a href="">UA</a></li>
-                        <li class="separator">|</li>
                         <li><a href="">EN</a></li>
                     </ul>
                     <a class="home-icon" href="${Constants.URL}${lan}/index"><img class="home-button" src="${Constants.URL}images/home-icon.png" />
                         <h3>Carpathian Road</h3></a>
                 </div>
                 <div class="logo-block">
-                    <a class="brand"><img src="${Constants.URL}images/logo-white.png" /></a>
+                    <a class="brand" href="${Constants.URL}${lan}/index"><img src="${Constants.URL}images/logo-white.png" /></a>
                 </div>
             </div>
 	</header>
