@@ -19,6 +19,16 @@
                 <a href="#" data-toggle="modal" data-target="#shureModal"> <i class="fa fa-fw fa-list-alt"></i> Back to category "${cat_name}"</a>
             </li>
         </ol>
+            
+        <div class="row add-row">
+            <div class="col-lg-12 margintop30 field">
+                <label for="tlt">Project avatar</label><br/>
+            </div>
+        </div>
+        <form action="${Constants.URL}system/do/uploadfile" class="dropzone"  id="my-awesome-dropzone-gal">
+            <input type="hidden" name="path" value="/files/avatars/" />
+            <input type="file" name="file" style="display:none" />
+        </form>
 	<form action="${Constants.URL}system/do/editdata" name="addArticleForm" id="addForm" method="POST" type="multipart/form-data">
             <input type="hidden" class="form-control" name="category" value="${category}">
             <input type="hidden" class="form-control" name="project_id" value="${project.project_id}">
@@ -29,13 +39,13 @@
                     <label for="tlt">Project name <span class="red-star">*</span></label>
                     <br/>
                     <div class="btn-group lang-switch-title" role="group" aria-label="...">
-                        <button type="button" id="titleEN" class="btn btn-default active">In English</button>
-                        <button type="button" id="titleUA" class="btn btn-default">In Ukrainian</button>
+                        <button type="button" id="titleUA" class="btn btn-default active">In Ukrainian</button>
+                        <button type="button" id="titleEN" class="btn btn-default">In English</button>
                     </div>
                 </div>
                 <div class="col-lg-6 margintop10 field titles">
-                    <input type="text" name="titleEN" class="form-control input-title-lang" lang="titleEN" id="tltEN"  maxlength="55" value="${project.project_name_en}">
                     <input type="text" name="titleUA" class="form-control input-title-lang" lang="titleUA" id="tltUA"  maxlength="55" value="${project.project_name_ua}">
+                    <input type="text" name="titleEN" class="form-control input-title-lang" lang="titleEN" id="tltEN"  maxlength="55" value="${project.project_name_en}">
                     <div class="validation"></div>
                 </div>
             </div>
@@ -44,27 +54,18 @@
                 <div class="col-lg-12 margintop30 field">
                     <label for="tlt">Article text <span class="red-star">*</span></label><br/>
                     <div class="btn-group lang-switch-text" role="group" aria-label="...">
-                        <button type="button" id="textEN" class="btn btn-default active">In English</button>
-                        <button type="button" id="textUA" class="btn btn-default">In Ukrainian</button>
+                        <button type="button" id="textUA" class="btn btn-default active">In Ukrainian</button>
+                        <button type="button" id="textEN" class="btn btn-default">In English</button>
                     </div>
                 </div>
                 <div class="col-lg-12 margintop10 field textareas">
                     <div class="ck-data-box" id="CKdata"></div>
-                        <div lang="textEN" class="textarea-msg"><textarea name="textEN" id="editorEN" rows="20" cols="80" class="input-block-level">${project.project_text_en}</textarea></div>
                         <div lang="textUA" class="textarea-msg"><textarea name="textUA" id="editorUA" rows="20" cols="80" class="input-block-level">${project.project_text_ua}</textarea></div>
+                        <div lang="textEN" class="textarea-msg"><textarea name="textEN" id="editorEN" rows="20" cols="80" class="input-block-level">${project.project_text_en}</textarea></div>
                         <div class="validation"></div>
                 </div>
             </div>
             <hr>
-        </form>
-        <div class="row add-row">
-            <div class="col-lg-12 margintop30 field">
-                <label for="tlt">Project avatar</label><br/>
-            </div>
-        </div>
-        <form action="${Constants.URL}system/do/uploadfile" class="dropzone"  id="my-awesome-dropzone-gal">
-            <input type="hidden" name="path" value="/files/avatars/" />
-            <input type="file" name="file" style="display:none" />
         </form>
         <p>
             <button class="btn btn-success margintop30 marginbottom30 sudmitData" type="submit">Save changes</button>

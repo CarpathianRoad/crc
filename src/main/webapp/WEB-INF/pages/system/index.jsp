@@ -39,7 +39,7 @@
                                 	<c:forEach items="${projects}" var="item">
                                             <tr class="table-item">
                                                 <td class="text-center counter">${count}</td>
-                                                <td>${item.project_name_en}</td>
+                                                <td>${item.project_name_ua}</td>
                                                 <td class="text-center">${item.project_lang}</td>
                                                 <td class="text-center"><a href="<c:url value="/system/edit/${item.project_id}"/>"><img class="article-buttons" src="${Constants.URL}images/edit.png" /></a></td>
                                                 <td class="text-center"><a href="<c:url value="/system/delete/${item.project_id}"/>"><img class="article-buttons" src="${Constants.URL}images/delete.png" /></a></td>

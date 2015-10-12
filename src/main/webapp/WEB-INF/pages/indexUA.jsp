@@ -410,6 +410,7 @@
 	<footer role="contentinfo">
             <div>
                 Developed by <a href="http://www.aits.ua/" target="_blank"><span class="reserved"> AITS</span></a>
+                <a class="enter-link" href="${Constants.URL}system/login"><img src="${Constants.URL}images/enter-icon.png"/></a>
             </div>
 	</footer>
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>

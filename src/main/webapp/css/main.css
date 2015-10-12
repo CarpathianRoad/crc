@@ -72,6 +72,13 @@ footer div span.reserved {
     margin-left: 6px;
     letter-spacing: 0.03em;
 }
+.enter-link {
+    float: right;
+    margin-top: 2px;
+}
+.enter-link img {
+    width: 20px;
+}
 section {
 	width: 100%;
 }
@@ -564,7 +571,26 @@ body#project-body .home-icon h3{
     letter-spacing: 0.06em;
     margin-left: 30px;
 }
-@media all and (max-device-width: 720px) {
+.portfolio-left-arrow {
+  background-image: url(../images/arrow_left.png);
+  width: 57px;
+  height: 70px;
+  margin-top: 200px;
+  position: absolute;
+  left: 72px;
+}
+.portfolio-right-arrow {
+  background-image: url(../images/arrow_right.png);
+  width: 57px;
+height: 70px;
+margin-top: 200px;
+position: absolute;
+right: 72px;
+}
+.portfolio-block {
+  padding: 99px 50px 10px 72px;
+}
+@media all and (max-device-width: 1360px) {
     header{
         width: 100%;
         background-size: cover;
@@ -668,6 +694,7 @@ body#project-body .home-icon h3{
     #contacts .side-block{
         width: 100%;
         height: auto;
+        padding-top: 25px;
     }
     .contact-button{
         position: static;
@@ -706,8 +733,10 @@ body#project-body .home-icon h3{
         font-size: 13px;
     }
     #contacts .right-block{
-        margin-top: -45px;
         padding-bottom: 25px;
+    }
+    #contacts .right-block h5{
+        margin-top: 0;
     }
     .left-block{
         float: none;
@@ -729,23 +758,77 @@ body#project-body .home-icon h3{
     .nav-arrow{
         display: none;
     }
-}
-.portfolio-left-arrow {
-  background-image: url(../images/arrow_left.png);
-  width: 57px;
-  height: 70px;
-  margin-top: 200px;
-  position: absolute;
-  left: 72px;
-}
-.portfolio-right-arrow {
-  background-image: url(../images/arrow_right.png);
-  width: 57px;
-height: 70px;
-margin-top: 200px;
-position: absolute;
-right: 72px;
-}
-.portfolio-block {
-  padding: 99px 50px 10px 72px;
+    #form-div{
+        position: static;
+        padding: 0 25px;
+        width: 100%;
+        margin: 0;
+        float: none;
+        left: 0;
+        box-sizing: border-box;
+    }
+    #button-blue{
+        padding: 6px 25px 5px 25px;
+    }
+    body#project-body{
+        overflow-x: hidden;
+    }
+    body#project-body header .language-block{
+        margin: 25px auto;
+        display: table;
+        padding: 0;
+    }
+    body#project-body header .home-icon{
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0;
+    }
+    body#project-body{
+        background-size: inherit;
+    }
+    body#project-body header .home-icon img{
+        display: none;
+    }
+    body#project-body .logo-block .brand img{
+        width: 50px;
+        margin-top: -22px;
+    }
+    body#project-body header .project-top-block{
+        float: none;
+    }
+    body#project-body .home-icon h3{
+        margin-left: 0;
+        margin-top: 60px;
+    }
+    body#project-body section{
+        margin-top: 0;
+    }
+    body#project-body section .main-block{
+        width: 100%;
+    }
+    body#project-body .main-block img{
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    body#project-body .main-block p{
+        width: 100% !important;
+        margin: 15px 0 !important;
+    }
+    body#project-body section .main-block .main-header-block h4{
+        margin-bottom: 0;
+    }
+    body#project-body section .main-block .text-block{
+        padding: 0 25px !important;
+        font-size: 12px;
+    }
+    .main-header-block h4{
+        font-size: 20px;
+    }
+    body#project-body section .main-block .main-header-block{
+        padding-top: 25px;
+    }
+    body#project-body footer{
+        padding: 0;
+    }
 }

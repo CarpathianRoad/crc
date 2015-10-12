@@ -7,6 +7,10 @@ package ua.aits.crc.controller;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import static java.util.Collections.list;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Scope;
@@ -38,7 +42,11 @@ public class MainController {
     @RequestMapping(value = {"/{lan}/index", "/{lan}/main", "/{lan}/home"}, method = RequestMethod.GET)
     public ModelAndView index(@PathVariable("lan") String lan, HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, ParseException  {
         ModelAndView model = new ModelAndView("index"+lan.toUpperCase());
-        model.addObject("energy", Projects.getProjectsByCategory("1"));
+        List<ProjectModel> energy = Projects.getProjectsByCategory("1");
+        for (ListIterator<ProjectModel> iter = energy.listIterator(); iter.hasNext(); ) {
+            ProjectModel a = iter.next(); if (a.project_id == 1) { iter.remove(); }
+        }
+        model.addObject("energy", energy);
         model.addObject("ecology", Projects.getProjectsByCategory("2"));
         model.addObject("tourism", Projects.getProjectsByCategory("3"));
         model.addObject("soc-projects", Projects.getProjectsByCategory("4"));
@@ -91,7 +99,7 @@ public class MainController {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(email));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("sirakandrew@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("office@crc.org.ua"));
             message.setSubject("Mail from site");
             message.setText("Name: "+name
                     + "\nEmail: " + email 
