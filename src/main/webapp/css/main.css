@@ -581,14 +581,16 @@ body#project-body .home-icon h3{
   margin-top: 200px;
   position: absolute;
   left: 72px;
+      background-repeat: no-repeat;
 }
 .portfolio-right-arrow {
-  background-image: url(../images/arrow_right.png);
-  width: 57px;
-height: 70px;
-margin-top: 200px;
-position: absolute;
-right: 72px;
+    background-image: url(../images/arrow_right.png);
+    width: 35px;
+    height: 70px;
+    margin-top: 200px;
+    position: absolute;
+    right: 72px;
+    background-repeat: no-repeat;
 }
 .portfolio-block {
   padding: 99px 50px 10px 72px;

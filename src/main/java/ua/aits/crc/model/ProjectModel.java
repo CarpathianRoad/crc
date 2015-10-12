@@ -102,11 +102,11 @@ public class ProjectModel {
             ProjectModel temp = new ProjectModel();
             String text_ua = Helpers.html2text(result.getString("project_text_ua"));
             String text_en = Helpers.html2text(result.getString("project_text_en"));
-            if(text_ua.length() > 250){
-                text_ua = text_ua.substring(0,250);
+            if(text_ua.length() > 200){
+                text_ua = text_ua.substring(0,200);
             }
-            if(text_en.length() > 250){
-                text_en = text_en.substring(0,250);
+            if(text_en.length() > 200){
+                text_en = text_en.substring(0,200);
             }
             temp.setProject_id(result.getInt("project_id"));
             temp.setProject_name_en(result.getString("project_name_en").replace("\"","&quot;"));
