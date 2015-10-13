@@ -25,6 +25,8 @@ public class ProjectModel {
     public String project_name_en;
     public String project_text_ua;
     public String project_text_en;
+    public String project_text_avatar_ua;
+    public String project_text_avatar_en;
     public String project_avatar;
     public Integer project_category;
     public String project_lang;
@@ -86,6 +88,22 @@ public class ProjectModel {
         this.project_lang = project_lang;
     }
 
+    public String getProject_text_avatar_ua() {
+        return project_text_avatar_ua;
+    }
+
+    public void setProject_text_avatar_ua(String project_text_avatar_ua) {
+        this.project_text_avatar_ua = project_text_avatar_ua;
+    }
+
+    public String getProject_text_avatar_en() {
+        return project_text_avatar_en;
+    }
+
+    public void setProject_text_avatar_en(String project_text_avatar_en) {
+        this.project_text_avatar_en = project_text_avatar_en;
+    }
+
     public String getProject_avatar() {
         return project_avatar;
     }
@@ -100,19 +118,13 @@ public class ProjectModel {
     	List<ProjectModel> projects = new LinkedList<>();
         while (result.next()) {
             ProjectModel temp = new ProjectModel();
-            String text_ua = Helpers.html2text(result.getString("project_text_ua"));
-            String text_en = Helpers.html2text(result.getString("project_text_en"));
-            if(text_ua.length() > 200){
-                text_ua = text_ua.substring(0,200);
-            }
-            if(text_en.length() > 200){
-                text_en = text_en.substring(0,200);
-            }
             temp.setProject_id(result.getInt("project_id"));
             temp.setProject_name_en(result.getString("project_name_en").replace("\"","&quot;"));
             temp.setProject_name_ua(result.getString("project_name_ua").replace("\"","&quot;"));
-            temp.setProject_text_en(text_en);
-            temp.setProject_text_ua(text_ua);
+            temp.setProject_text_en(result.getString("project_text_en"));
+            temp.setProject_text_ua(result.getString("project_text_ua"));
+            temp.setProject_text_avatar_ua(result.getString("project_text_avatar_ua"));
+            temp.setProject_text_avatar_en(result.getString("project_text_avatar_en"));
             temp.setProject_avatar(result.getString("project_avatar"));
             temp.setProject_category(result.getInt("project_category"));
             String lang = "";
@@ -141,24 +153,28 @@ public class ProjectModel {
         temp.setProject_name_ua(result.getString("project_name_ua").replace("\"","&quot;"));
         temp.setProject_text_en(result.getString("project_text_en"));
         temp.setProject_text_ua(result.getString("project_text_ua"));
+        temp.setProject_text_avatar_ua(result.getString("project_text_avatar_ua"));
+        temp.setProject_text_avatar_en(result.getString("project_text_avatar_en"));
         temp.setProject_avatar(result.getString("project_avatar"));
         temp.setProject_category(result.getInt("project_category"));
         DB.closeCon();    
         return temp;
     }
     
-    public void insertProject(String titleEN, String titleUA, String textEN, String textUA, String avatar, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        DB.runQuery("INSERT INTO `projects`(`project_name_ua`, `project_name_en`, `project_text_ua`, `project_text_en`, `project_avatar`, `project_category`) VALUES ("
-            	+ "'"+StringEscapeUtils.escapeSql(titleUA)+"','"+StringEscapeUtils.escapeSql(titleEN)+"','"+StringEscapeUtils.escapeSql(textUA)+"','"+StringEscapeUtils.escapeSql(textEN)+"','"+avatar+"','"+category+"');");
+    public void insertProject(String titleEN, String titleUA, String textEN, String textUA, String textAvaEN, String textAvaUA, String avatar, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        DB.runQuery("INSERT INTO `projects`(`project_name_ua`, `project_name_en`, `project_text_ua`, `project_text_en`, `project_text_avatar_ua`, `project_text_avatar_en`, `project_avatar`, `project_category`) VALUES ("
+            	+ "'"+StringEscapeUtils.escapeSql(titleUA)+"','"+StringEscapeUtils.escapeSql(titleEN)+"','"+StringEscapeUtils.escapeSql(textUA)+"','"+StringEscapeUtils.escapeSql(textEN)+"','"+textAvaUA+"','"+textAvaEN+"','"+avatar+"','"+category+"');");
     	DB.closeCon();
     }
     
-    public void updateProject(String id, String titleEN, String titleUA, String textEN, String textUA, String avatar, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void updateProject(String id, String titleEN, String titleUA, String textEN, String textUA, String textAvaEN, String textAvaUA, String avatar, String category) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         DB.runQuery("UPDATE `projects` SET "
                 + "`project_name_ua`='"+StringEscapeUtils.escapeSql(titleUA)+"',"
                 + "`project_name_en`='"+StringEscapeUtils.escapeSql(titleEN)+"',"
                 + "`project_text_ua`='"+StringEscapeUtils.escapeSql(textUA)+"',"
                 + "`project_text_en`='"+StringEscapeUtils.escapeSql(textEN)+"',"
+                + "`project_text_avatar_ua`='"+textAvaUA+"',"
+                + "`project_text_avatar_en`='"+textAvaEN+"',"
                 + "`project_avatar`='"+avatar+"'"
                 + " WHERE project_id = "+id+";");
     	DB.closeCon();

@@ -137,9 +137,11 @@ public class SystemController {
     	String titleUA = request.getParameter("titleUA");
     	String textEN = request.getParameter("textEN");
     	String textUA = request.getParameter("textUA");
+    	String textAvaUA = request.getParameter("avatar_textUA");
+    	String textAvaEN = request.getParameter("avatar_textEN");
     	String avatar = request.getParameter("avatar_path");
     	String category = request.getParameter("category");
-    	Projects.insertProject(titleEN, titleUA, textEN, textUA, avatar, category);
+    	Projects.insertProject(titleEN, titleUA, textEN, textUA, textAvaEN, textAvaUA, avatar, category);
     	return new ModelAndView("redirect:" + "/system/index/"+category);
     }
         
@@ -151,10 +153,12 @@ public class SystemController {
     	String titleUA = request.getParameter("titleUA");
     	String textEN = request.getParameter("textEN");
     	String textUA = request.getParameter("textUA");
+    	String textAvaUA = request.getParameter("avatar_textUA");
+    	String textAvaEN = request.getParameter("avatar_textEN");
     	String avatar = request.getParameter("avatar_path");
     	String category = request.getParameter("category");
     	
-    	Projects.updateProject(id, titleEN, titleUA, textEN, textUA, avatar, category);
+    	Projects.updateProject(id, titleEN, titleUA, textEN, textUA, textAvaEN, textAvaUA, avatar, category);
     	return new ModelAndView("redirect:" + "/system/index/"+category);
     }
         

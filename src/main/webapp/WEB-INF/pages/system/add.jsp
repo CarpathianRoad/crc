@@ -34,6 +34,22 @@
             <input type="hidden" class="form-control" id="avatar_path" name="avatar_path">
             <div class="row add-row">
                 <div class="col-lg-12 margintop30 field">
+                    <label for="tlt">Avatar text (230 symbols) <span class="red-star">*</span></label>
+                    <br/>
+                    <div class="btn-group lang-switch-avatar-text" role="group" aria-label="...">
+                        <button type="button" id="avatar_textUA" class="btn btn-default active">In Ukrainian</button>
+                        <button type="button" id="avatar_textEN" class="btn btn-default">In English</button>
+                    </div>
+                </div>
+                <div class="col-lg-12 margintop10 field avatar_titles">
+                    <input type="text" name="avatar_textUA" class="form-control input-avatar-text-lang validate[length[0,230]]" lang="avatar_textUA" id="tlt_avaUA"  maxlength="230">
+                    <input type="text" name="avatar_textEN" class="form-control input-avatar-text-lang validate[length[0,230]]" lang="avatar_textEN" id="tlt_avaEN"  maxlength="230">
+                    <div class="validation"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="row add-row">
+                <div class="col-lg-12 margintop30 field">
                     <label for="tlt">Project name <span class="red-star">*</span></label>
                     <br/>
                     <div class="btn-group lang-switch-title" role="group" aria-label="...">
@@ -102,6 +118,8 @@
         $(".textareas .textarea-msg[lang='"+currentLang+"']").show();
         var currentLangT = $(".lang-switch-title button.active").attr("id");
         $(".input-title-lang[lang='"+currentLangT+"']").show();
+        var currentLangAT = $(".lang-switch-avatar-text button.active").attr("id");
+        $(".input-avatar-text-lang[lang='"+currentLangAT+"']").show();
         initCKE();
     });
     
@@ -119,6 +137,13 @@
         $(".input-title-lang").hide();
         $(".input-title-lang[lang='"+currentLangT+"']").show();
     });
+    $(".lang-switch-avatar-text button").click(function(){
+        $(".lang-switch-avatar-text button").removeClass("active");
+        $(this).addClass("active");
+        var currentLangT = $(this).attr("id");
+        $(".input-avatar-text-lang").hide();
+        $(".input-avatar-text-lang[lang='"+currentLangT+"']").show();
+    });
     $(".sudmitData").click(function(e){
         $("div.validation").html('');
         $("div.validation").attr("id","");
@@ -127,6 +152,20 @@
             isValidate = false;
             $(".titles div.validation").attr("id","active-validation");
             $(".titles div.validation").html("<span style='color:red'>Title can't be empty!</span>");
+            e.preventDefault(); 
+            goToByScroll("active-validation");
+        }
+        if($("#tlt_avaEN").val() === "" && $("#tlt_avaUA").val() === "") {
+            isValidate = false;
+            $(".avatar_titles div.validation").attr("id","active-validation");
+            $(".avatar_titles div.validation").html("<span style='color:red'>Avatar text can't be empty!</span>");
+            e.preventDefault(); 
+            goToByScroll("active-validation");
+        }
+        if($("#tlt_avaEN").val().length > 240 || $("#tlt_avaUA").val().length > 240) {
+            isValidate = false;
+            $(".avatar_titles div.validation").attr("id","active-validation");
+            $(".avatar_titles div.validation").html("<span style='color:red'>Max text length - 240!</span>");
             e.preventDefault(); 
             goToByScroll("active-validation");
         }

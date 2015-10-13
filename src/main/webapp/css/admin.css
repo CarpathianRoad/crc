@@ -70,21 +70,6 @@ h4 {
 a {
     color: #428bca;
 }
-.margintop10 {
-    margin-top: 10px;
-}
-.margintop20 {
-    margin-top: 20px;
-}
-.margintop30 {
-    margin-top: 30px;
-}
-.margintop-button {
-    margin-top: 23px;
-}
-.marginbottom30 {
-    margin-bottom: 30px;
-}
 
 .modal-dialog {
     width: 710px;
@@ -165,6 +150,9 @@ white-space: nowrap;
     display:none;
 }
 .input-title-lang {
+    display: none;
+}
+.input-avatar-text-lang {
     display: none;
 }
 .modal-dialog {
@@ -491,12 +479,6 @@ ul.alert-dropdown {
 .list-group-item:first-child {
     border-top-left-radius: 0px; 
     border-top-right-radius: 0px; 
-}
-.input-title-lang {
-  display: none;
-}
-.textarea-msg {
-  display: none;
 }
 .margintop10 {
     margin-top: 10px;

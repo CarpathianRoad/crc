@@ -144,10 +144,10 @@
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
                                         <ul class="slidecontrols">
-                                            <li><a href="#sliderName" class="prev"><div class="portfolio-left-arrow"></div></a></li>
-                                            <li><a href="#sliderName" class="next"><div class="portfolio-right-arrow"></div></a></li>
+                                            <li><a href="#sliderName1" class="prev"><div class="portfolio-left-arrow"></div></a></li>
+                                            <li><a href="#sliderName1" class="next"><div class="portfolio-right-arrow"></div></a></li>
                                         </ul>
-                                        <ul class="slider" id="sliderName">
+                                        <ul class="slider" id="sliderName1">
                                             <li class="slide">
                                                 <div class="side-block right-block">
                                                         <div class="text-block">
@@ -212,10 +212,10 @@
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
                                         <ul class="slidecontrols">
-                                            <li><a href="#sliderName" class="prev"><div class="portfolio-left-arrow"></div></a></li>
-                                            <li><a href="#sliderName" class="next"><div class="portfolio-right-arrow"></div></a></li>
+                                            <li><a href="#sliderName2" class="prev"><div class="portfolio-left-arrow"></div></a></li>
+                                            <li><a href="#sliderName2" class="next"><div class="portfolio-right-arrow"></div></a></li>
                                         </ul>
-                                        <ul class="slider" id="sliderName">
+                                        <ul class="slider" id="sliderName2">
                                             <li class="slide">
                                                 <div class="side-block left-block">
                                                         <div class="text-block">
@@ -280,10 +280,10 @@
                                     <c:otherwise>
                                     <div class="slidewrap" data-autorotate="5000">
                                         <ul class="slidecontrols">
-                                            <li><a href="#sliderName" class="prev"><div class="portfolio-left-arrow"></div></a></li>
-                                            <li><a href="#sliderName" class="next"><div class="portfolio-right-arrow"></div></a></li>
+                                            <li><a href="#sliderName3" class="prev"><div class="portfolio-left-arrow"></div></a></li>
+                                            <li><a href="#sliderName3" class="next"><div class="portfolio-right-arrow"></div></a></li>
                                         </ul>
-                                        <ul class="slider" id="sliderName">
+                                        <ul class="slider" id="sliderName3">
                                             <li class="slide">
                                                 <div class="side-block right-block">
                                                         <div class="text-block">
