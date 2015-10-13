@@ -110,8 +110,7 @@
             else {
                 var url = window.location.href.split('/')[6];
             }
-            console.log(url);
-            if(url === 'panel' || url === 'index' || url === 'main' || url === 'articles') {
+            if(url === '') {
                 $("li[num='1']").addClass('active');
             }
             else {

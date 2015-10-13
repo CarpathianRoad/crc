@@ -190,7 +190,6 @@
             type: 'GET',
             data: 'path='+path,
             success: function(data){
-                console.log(data);
             }
         });
     }

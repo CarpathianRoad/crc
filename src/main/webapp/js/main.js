@@ -77,7 +77,6 @@ $(document).ready(function() {
                 if(count === 4) {
                     count = 0;
                 }
-                console.log(count);
             });
         }, 10000); 
     
@@ -180,9 +179,7 @@ function onScroll(event){
                 $('nav ul li').removeClass("active");
                 var ids = $(this).attr("href").replace('#','');
                 $('#'+ids+'-menu-item').addClass("active");
-				//console.log($('#'+ids+'-menu-item a').attr("href"));
 				if ($(window).scrollTop() + $(window).height() > $('footer').offset().top) {
-					console.log("footer visible");
 				}
 				if($('#'+ids+'-menu-item a').attr("href") === "#contacts" || $(window).scrollTop() + $(window).height() > $('footer').offset().top){
 					$(".nav-arrow").attr("href", "#head-item");

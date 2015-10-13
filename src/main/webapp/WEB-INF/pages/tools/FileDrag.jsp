@@ -58,7 +58,6 @@
        	 
     	});
     	function completeAjaxCall(path){
-    	console.log(path);
                 	window.opener.CKEDITOR.tools.callFunction("${num}", ""+"${Constants.URL}"+ path +"","");
                 	window.opener.imageInserted();
                 	window.close();
