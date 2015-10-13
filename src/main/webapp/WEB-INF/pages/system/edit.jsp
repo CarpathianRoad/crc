@@ -33,7 +33,7 @@
             <input type="hidden" class="form-control" name="category" value="${category}">
             <input type="hidden" class="form-control" name="project_id" value="${project.project_id}">
             <input type="hidden" class="form-control" id="avatar_path" name="avatar_path">
-            <input type="hidden" name="dir" id="dir-name" value="${folder}" />
+            <input type="hidden" name="dir" id="dir-name" value="files" />
             <div class="row add-row">
                 <div class="col-lg-12 margintop30 field">
                     <label for="tlt">Avatar text (230 symbols) <span class="red-star">*</span></label>
@@ -187,7 +187,8 @@
             'slow');
     }
     function deleteFile(temp){
-        var path = $("#dir-name").val() + "/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
+        var path = "/files/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
+        console.log(path);
         jQuery.ajax({
             url: '${Constants.URL}system/do/removefile',
             cache: false,

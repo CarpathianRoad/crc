@@ -181,7 +181,8 @@
             'slow');
     }
     function deleteFile(temp){
-        var path = $("#dir-name").val() + "/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
+        var path = "/files/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
+        console.log(path);
         jQuery.ajax({
             url: '${Constants.URL}system/do/removefile',
             cache: false,
