@@ -182,7 +182,6 @@
     }
     function deleteFile(temp){
         var path = "/files/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
-        console.log(path);
         jQuery.ajax({
             url: '${Constants.URL}system/do/removefile',
             cache: false,

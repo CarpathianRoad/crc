@@ -187,17 +187,19 @@
             'slow');
     }
     function deleteFile(temp){
-        var path = "/files/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
-        console.log(path);
+            var path = "/files/avatars/" + $(temp).parent().find(".dz-details .dz-filename span").text();
+        
         jQuery.ajax({
-            url: '${Constants.URL}system/do/removefile',
+            url: '${Constants.URL}systemdo/removefile',
             cache: false,
             contentType: false,
             processData: false,
             type: 'GET',
             data: 'path='+path,
             success: function(data){
-                console.log(data);
+                if (!$("#my-awesome-dropzone-gal").find("div.dz-file-preview").length) { 
+                    $(".dz-message").show();
+                }
             }
         });
     }
