@@ -91,6 +91,21 @@ $(".mail-us").click(function(){
     $("#mail-form").fadeIn("slow");
     });
 });
+function replaceChar(inputString) {
+   inputString = inputString.replace('~', '');
+   inputString = inputString.replace('#', '');
+   inputString = inputString.replace('^', '');
+   inputString = inputString.replace('&', '');
+   inputString = inputString.replace('*', '');
+   inputString = inputString.replace('`', '');
+   inputString = inputString.replace('\'', '');
+   inputString = inputString.replace('+', '');
+   return inputString;
+}
+function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
 $("#button-blue").click(function (){
     $('#mail-form input:not(#button-blue)').css("border","none");
     $('#mail-form textarea').css("border","none");
@@ -100,15 +115,20 @@ $("#button-blue").click(function (){
     if($("#name").val() === null || $("#name").val() === "" || $("#email").val() === null || $("#email").val() === "" || $("#comment").val() === null || $("#comment").val() === "") {
         validation = false;
     }
+    if(!IsEmail($("#email").val())) {
+        validation = false;
+    }
     if(validation){
         $("#mail-form").fadeOut("fast", function() {
             $("#mail-loading").fadeIn("fast");
         });
+        var name = replaceChar($("#name").val());
+        var comment = replaceChar($("#comment").val());
         $.ajax({
             type: "get",
             url: url+"sendmail",
             cache: false,    
-            data:'name='+ $("#name").val() +'&email='+$("#email").val()+'&text='+$("#comment").val(),
+            data:'name='+ name +'&email='+$("#email").val()+'&text='+comment,
             success: function(response){
                 if(response === "" || response === null){
                     $("#mail-loading").fadeOut("fast", function() {

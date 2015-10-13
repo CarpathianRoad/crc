@@ -598,7 +598,20 @@ body#project-body .home-icon h3{
 .portfolio-block {
   padding: 99px 50px 10px 72px;
 }
+.grow { -webkit-transition: transform 2s ease-in-out;
+    -moz-transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in-out; }
+.grow:hover {  
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
 @media all and (max-device-width: 1360px) {
+    body{
+        overflow-x: hidden;
+    }
     header{
         width: 100%;
         background-size: cover;
@@ -785,6 +798,7 @@ body#project-body .home-icon h3{
         margin: 25px auto;
         display: table;
         padding: 0;
+        padding-left: 15px;
     }
     body#project-body header .home-icon{
         display: table;
@@ -797,6 +811,10 @@ body#project-body .home-icon h3{
         background-size: inherit;
     }
     body#project-body header .home-icon img{
+            margin-top: 6px;
+    }
+    body#project-body header .language-block li{
+        padding-right: 12px;
     }
     body#project-body .logo-block .brand img{
         width: 50px;
@@ -839,14 +857,16 @@ body#project-body .home-icon h3{
     body#project-body footer{
         padding: 0;
     }
+    .portfolio-left-arrow{
+        width: 18px;
+        height: 35px;
+        left: 20px;
+        background-size: cover;
+    }
+    .portfolio-right-arrow{
+        width: 18px;
+        height: 35px;
+        right: 20px;
+        background-size: cover;
+    }
 }
-.grow { -webkit-transition: transform 2s ease-in-out;
-    -moz-transition: transform 2s ease-in-out;
-    transition: transform 2s ease-in-out; }
-.grow:hover {  
-    -moz-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); }
