@@ -110,7 +110,7 @@
             else {
                 var url = window.location.href.split('/')[6];
             }
-            if(url === '') {
+            if(url === '' || url === null) {
                 $("li[num='1']").addClass('active');
             }
             else {

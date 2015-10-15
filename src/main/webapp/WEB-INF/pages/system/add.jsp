@@ -21,7 +21,7 @@
         </ol>
         <div class="row add-row">
             <div class="col-lg-12 margintop30 field">
-                <label for="tlt">Project avatar</label><br/>
+                <label for="tlt">Project avatar (${image_size})</label><br/>
             </div>
         </div>
         <form action="${Constants.URL}system/do/uploadfile" class="dropzone"  id="my-awesome-dropzone-gal">

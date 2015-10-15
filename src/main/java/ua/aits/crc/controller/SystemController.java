@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import ua.aits.crc.model.CategoryModel;
 import ua.aits.crc.model.ProjectModel;
 import ua.aits.crc.functions.Constants;
+import ua.aits.crc.functions.Helpers;
 import ua.aits.crc.functions.Transliterator;
 
 /**
@@ -66,6 +67,7 @@ public class SystemController {
     	model.addObject("folder", folder);
     	model.addObject("folder_str", folder.replace('/', '|'));
     	model.addObject("category", id);
+        model.addObject("image_size", Helpers.getImageSize(id));
     	model.addObject("cat_name", Categories.getCatName(id));
     	return model;
     }
@@ -78,6 +80,7 @@ public class SystemController {
     	model.addObject("folder", folder);
     	model.addObject("folder_str", folder.replace('/', '|'));
     	model.addObject("category", temp.project_category);
+        model.addObject("image_size", Helpers.getImageSize(temp.project_category.toString()));
     	model.addObject("cat_name", Categories.getCatName(temp.project_category.toString()));
         model.addObject("project", temp);
     	return model;
