@@ -11,8 +11,8 @@ package ua.aits.crc.functions;
  */
 public class Constants
 {
-    public static final String home = "/home/kiwi/Development/NetBeansProjects/CRC/src/main/webapp/"; 
-    public static final String URL = "/CRC/";
+    public static final String home = "/usr/share/tomcat8/crc/ROOT/"; 
+    public static final String URL = "/";
     
     public static final String DB_DRIVER = "com.mysql.jdbc.Driver";
     public static final String DB_CONNECTION_STRING = "jdbc:mysql://localhost:3306/crc?characterEncoding=UTF-8";
